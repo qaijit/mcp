@@ -6,13 +6,15 @@
   "bin": "dist/index.js",
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.15.1",
-    "puppeteer": "^24.10.0",
     "ajv": "^8.17.1",
     "arg": "^5.0.2",
     "csv-parse": "^6.0.0",
     "datadog-metrics": "^0.12.1",
+    "imghash": "^1.1.0",
     "open": "^10.2.0",
-    "p-limit": "^6.2.0"
+    "p-limit": "^6.2.0",
+    "puppeteer": "^24.10.0",
+    "sharp": "^0.34.3"
   },
   "devDependencies": {
     "esbuild": "^0.25.5",
