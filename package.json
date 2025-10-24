@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "MCP server implementing Evaluator-Optimizer pattern for model response quality control",
   "type": "module",
-  "bin": "dist/index.js",
+  "bin": {
+    "mcp-evaluator": "./dist/index.js",
+    "mcp-evaluator-cli": "./dist/cli.js",
+    "mcp-evaluator-optimizer": "./dist/index.js"
+  },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.15.1",
     "ajv": "^8.17.1",
@@ -21,7 +25,9 @@
     "typescript": "^5.8.3"
   },
   "files": [
-    "dist/index.js"
+    "dist/index.js",
+    "dist/cli.js",
+    "dist/dashboard/"
   ],
   "engines": {
     "node": ">=20.0.0"
