@@ -2227,7 +2227,7 @@ class QADashboard {
         }
 
         // Use the API URL passed from the backend, or fallback to default
-        this.apiBaseUrl = this.apiUrl || "http://127.0.0.1:8000";
+        this.apiBaseUrl = this.apiUrl || "https://api.qaijit.com";
 
         // Remove any existing event listeners by cloning the element
         const newBtn = externalLinkBtn.cloneNode(true);
