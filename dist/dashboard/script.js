@@ -1140,7 +1140,7 @@ class QADashboard {
         }
 
         card.addEventListener("click", () => {
-            this.openModal(sessionUid);
+            this.openReplayWindow(sessionUid);
         });
 
         return card;
@@ -1449,7 +1449,7 @@ class QADashboard {
                 // Create new task item if it doesn't exist
                 taskItem = this.uiRenderer.createTaskItem(sessionUid, sessionData);
                 taskItem.addEventListener("click", () => {
-                    this.openModal(sessionUid);
+                    this.openReplayWindow(sessionUid);
                 });
                 columnContent.appendChild(taskItem);
 
@@ -1946,6 +1946,24 @@ class QADashboard {
         window.dispatchEvent(
             new CustomEvent("filterComplete", {
                 detail: { selectedTestIds },
+            })
+        );
+    }
+
+    openReplayWindow(sessionUid) {
+        // Use the API URL passed from the backend, or fallback to default
+        const apiBaseUrl = this.apiUrl || "https://api.qaijit.com";
+        const replayUrl = `${apiBaseUrl}/app/replay/${sessionUid}`;
+
+        console.log(
+            `🎬 Opening replay in system browser for session ${sessionUid}: ${replayUrl}`
+        );
+
+        // Dispatch custom event to open in system browser (not puppeteer)
+        console.log("EXTERNAL_URL_REQUEST:", replayUrl);
+        window.dispatchEvent(
+            new CustomEvent("openExternalUrl", {
+                detail: { url: replayUrl },
             })
         );
     }
