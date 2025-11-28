@@ -1960,7 +1960,7 @@ class QADashboard {
         );
 
         // Dispatch custom event to open in system browser (not puppeteer)
-        console.log("EXTERNAL_URL_REQUEST:", replayUrl);
+        // The event listener in index.ts will handle the actual URL opening
         window.dispatchEvent(
             new CustomEvent("openExternalUrl", {
                 detail: { url: replayUrl },
@@ -2261,7 +2261,7 @@ class QADashboard {
                 console.log("Opening external app dashboard:", externalUrl);
 
                 // Dispatch custom event to request opening URL in system browser
-                console.log("EXTERNAL_URL_REQUEST:", externalUrl);
+                // The event listener in index.ts will handle the actual URL opening
                 window.dispatchEvent(
                     new CustomEvent("openExternalUrl", {
                         detail: { url: externalUrl },
